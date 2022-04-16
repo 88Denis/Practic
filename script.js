@@ -1,114 +1,202 @@
 
+///////////////* Объект и его свойства *////////////////
+
+
+// let personalMovieDB = {
+// count: 0,
+// movies: {},
+// actors: {},    
+// genres: [],
+// privat: false,
+// start: function() {
+//   personalMovieDB.movies = +prompt("Сколько фильмов вы уже посмотрели?", '');
+
+//     while (personalMovieDB.movies == '' || personalMovieDB.movies == null || isNaN(personalMovieDB.movies)) {
+//       personalMovieDB.movies = +prompt("Сколько фильмов вы уже посмотрели?", '');
+//   }
+// },
 
 
 
-let personalMovieDB = {
-count: 0,
-movies: {},
-actors: {},    
-genres: [],
-privat: false,
-start: function() {
-  personalMovieDB.movies = +prompt("Сколько фильмов вы уже посмотрели?", '');
-
-    while (personalMovieDB.movies == '' || personalMovieDB.movies == null || isNaN(personalMovieDB.movies)) {
-      personalMovieDB.movies = +prompt("Сколько фильмов вы уже посмотрели?", '');
-  }
-},
 
 
-
-
-
-remembeMyFilms: function() {
-  for (let i = 0; i < 2; i++) {
-    let a = prompt("Один из полследних просмотренных фильмов?", ''),
-        b = prompt("На сколько оцените его?", ''); 
+// remembeMyFilms: function() {
+//   for (let i = 0; i < 2; i++) {
+//     let a = prompt("Один из полследних просмотренных фильмов?", ''),
+//         b = prompt("На сколько оцените его?", ''); 
   
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-        } else {
-         alert('Пожалуйста заполните все поля ввода!');
-         i--;
-        }
-      }
-    },
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//         } else {
+//          alert('Пожалуйста заполните все поля ввода!');
+//          i--;
+//         }
+//       }
+//     },
     
 
-    detectPersinalLevel: function() {
-      if (personalMovieDB.count < 10) {
-        alert('Просмотренно довольно мало фильмов');
-      } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-      alert('Вы классический зритель'); 
-      } else if (personalMovieDB.count >= 30) {
-      alert('Вы киноман');
+//     detectPersinalLevel: function() {
+//       if (personalMovieDB.count < 10) {
+//         alert('Просмотренно довольно мало фильмов');
+//       } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//       alert('Вы классический зритель'); 
+//       } else if (personalMovieDB.count >= 30) {
+//       alert('Вы киноман');
 
-      } else {
-      alert('Произошла ошибка!');
-      }
-    },
+//       } else {
+//       alert('Произошла ошибка!');
+//       }
+//     },
     
 
 
-    showMyDB: function(hidden) {
-      if (!hidden) {
-        console.log(personalMovieDB);
-      }
-    },
+//     showMyDB: function(hidden) {
+//       if (!hidden) {
+//         console.log(personalMovieDB);
+//       }
+//     },
 
-    toggleVisibleMyDB: function() {
-      if(personalMovieDB.privat === false) {
-      personalMovieDB.privat = true;
-    } else { 
-      personalMovieDB.privat = false;
-    }
-  },
+//     toggleVisibleMyDB: function() {
+//       if(personalMovieDB.privat === false) {
+//       personalMovieDB.privat = true;
+//     } else { 
+//       personalMovieDB.privat = false;
+//     }
+//   },
   
+//   writeYourGenres: function() {
+//     for (let i = 1; i <= 3; i++) {
+//       let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+      
   
+//       if(genre != null && genre != '') {
+//         personalMovieDB.genres[i - 1] = genre;
+//       } else {
+//         alert('Пожалуйста заполните все поля ввода!');
+//         i--;
+//       }
+//     }
 
 
-};
+//     //////////*Другй способ передачи данных *///////////////
 
-function writeYourGenres() {
-  for (let i = 1; i <= 3; i++) {
-    let genre = prompt(`Ваш любимый жанр под номером ${i}`);
-    
+// //     for (let i = 1; i <= 1; i++) {
+// //     let genre = prompt(`Перечислите через запятую ваши любимые жанры`);
 
-    if(genre != null && genre != '') {
-      personalMovieDB.genres[i - 1] = genre;
-    } else {
-      alert('Пожалуйста заполните все поля ввода!');
-      i--;
-    }
-  }
-  personalMovieDB.genres.forEach((item, i) => {
-    console.log(`Любимый жанр ${i + 1} - это ${item}`);
-  });
-}
-writeYourGenres();
+// //       if(genre != null && genre != '') {
+// //         personalMovieDB.genres = genre.split(', ');
+// //         personalMovieDB.genres.sort();
+// //       } else {
+// //         alert('Пожалуйста заполните все поля ввода!');
+// //         i--;
+        
+// //       }
+// //     }
 
+// //////////*Другй способ передачи данных *//////////////
+
+//     personalMovieDB.genres.forEach((item, i) => {
+//       console.log(`Любимый жанр ${i + 1} - это ${item}`);
+//     });
+//   }
+
+
+// };
+
+///////////////////////////////////////////////////////
+
+/*Отлавливание ошибок в своем коде при помощи консоли разработчика */
           
 
-          
+// function hello() {
+//   console.log('Hello World');
+// }
+// hello();
 
+// function hi() {
+//   console.log('Say hi!');
+// }
+// hi();
+
+
+// const arr = [54, 14, 30, 4, 1],
+//       sorted = arr.sort(compareNum);
+
+// function compareNum(a, b) {
+//   return a - b;
+// }
+
+// console.log(sorted);
+
+
+// console.log(typeof(String(null)));
+
+
+////////////*Динамическая типизация в JS *////////////
+
+    // // To string /////////////////
+
+    // /* 1) */
+    // console.log(typeof(String(null)));
+    // console.log(typeof(String(4)));
+
+    // /* 2) */
+    // console.log(typeof(5 + ''));
+
+    // const num = 5;
+    // console.log("http://vk.com/catalog/" + num);
+    // const fontSize = 26 + 'px';
+
+    // //  To number /////////////////
+
+    // /* 1) */
+    // console.log(typeof(Number('4')));
+    // console.log(typeof('+4'));
+
+    // /* 2) */
+    // console.log(typeof(parseInt('15px', 10)));
+
+    // let answer = +prompt('Hello', '');
+
+    // // To boolean /////////////////
+
+    // // 0, '', null, undefined, NaN; = false
+
+
+    // /* 1) */
+    // let switcher = null;
+    
+    // if (switcher) {
+    //   console.log('Working...');
+    // }
+
+    // switcher = 1;
+
+    // if (switcher) {
+    //   console.log('Working...');
+    // }
+
+    // /* 2) */
+
+    // console.log(typeof(Boolean('4')));
+
+    // /* 3) */
+    // console.log(typeof(!!'4444'));
 
     
 
+//////////////*Область видимости *//////////////
+
+    // let scope = "глобальная"; // Объявление глобальной переменной
+    // function checkscope() {
+    //  var scope = "локальная"; // Объявление локальной переменной с тем же именем
+    //  document.write(scope); // Используется локальная переменная, а не глобальная
+    // }
+    // checkscope(); 
 
 
-
-    
-
-
-
-    
-
-
-    
-
-
-                                      /* Цикл с использованием do */ 
+     ////////////* Цикл с использованием do *////////// 
 
 
 
@@ -138,7 +226,7 @@ writeYourGenres();
 // //   }
 
 
-                 /* callback function*/
+   //////////* callback function*///////////
 
       
 // function first() {
@@ -150,7 +238,7 @@ writeYourGenres();
 // first();
       
 
-                  /*   Деструктуризация объекта   */
+       ///////////*   Деструктуризация объекта   *///////////
 
 // const options = {
 //   name: 'test',
@@ -225,7 +313,7 @@ writeYourGenres();
 //   console.log(value);
 // }
 
-          /* Копирование свойств объекта */
+   ////////////* Копирование свойств объекта *///////////
 
   // const video = ['youtube', 'vimo', 'rutube'],
   //       blogs = ['woedpress', 'livejounal', 'blogger'],
@@ -301,3 +389,27 @@ writeYourGenres();
 
 // Object.setPrototypeOf(John, solider); /* Джон унаследует прототип от солдата */
 
+////////////*Получение элементов со страницы *////////////
+
+
+// const box = document.getElementById('box');
+
+// console.log(box);
+
+// const btns = document.getElementsByTagName('button');
+
+// console.log(btns[0]);
+
+// const circles = document.getElementsByClassName('circle');
+
+// console.log(circles);
+
+// const hearts = document.querySelectorAll('.heart');
+// hearts.forEach(item => {
+//   console.log(item);
+// });
+
+// const oneButton = document.querySelector('button');
+// console.log(oneButton);
+
+////////////* _____ *////////////
